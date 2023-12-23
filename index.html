@@ -99,6 +99,7 @@
             <span class="author-block">
               <a href="https://adamharley.com/">Adam W. Harley</a><sup>2</sup>,
             </span>
+            <br>
             <span class="author-block">
               <a href="https://gabesarch.me/">Gabriel Sarch</a><sup>1</sup>,
             </span>
@@ -181,10 +182,13 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
+      <figure>
+        <img src="./data/teaser_v6-1.png" style="padding-bottom:10px" class="img-responsive" alt="overview">
+        <!-- <figcaption class="figure-caption text-center" style="font-size: 14px;">
+            <b>Fig. 5.</b> The ReferIt3DNet neural listener.
+        </figcaption> -->
+      </figure>
+      <br>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">ODIN</span> is a single model for 2D and 3D perception.
       </h2>
@@ -192,8 +196,119 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          State-of-the-art models on contemporary 3D perception benchmarks like ScanNet consume and label dataset provided 3D point clouds, obtained through post processing of sensed multiview RGB-D images. They are typically trained in-domain, forego large-scale 2D pre-training
+          and outperform alternatives that featurize the posed RGBD multiview images instead. The gap in performance between methods that consume posed images versus postprocessed 3D point clouds has fueled the belief that 2D and 3D perception require distinct model architectures.
+          In this paper, we challenge this view and propose ODIN (Omni-Dimensional INstance segmentation), a model that
+          can segment and label both 2D RGB images and 3D point clouds, using a transformer architecture that alternates between 2D within-view and 3D cross-view information fusion. Our model differentiates 2D and 3D feature operations through the positional encodings of the tokens involved, which capture pixel coordinates for 2D patch tokens and 3D coordinates for 3D feature tokens. ODIN achieves
+          state-of-the-art performance on ScanNet200, Matterport3D and AI2THOR 3D instance segmentation benchmarks, and
+          competitive performance on ScanNet, S3DIS and COCO. It
+          outperforms all previous works by a wide margin when the
+          sensed 3D point cloud is used in place of the point cloud
+          sampled from 3D mesh. When used as the 3D perception engine in an instructable embodied agent architecture, it sets
+          a new state-of-the-art on the TEACh action-from-dialogue
+          benchmark.
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
 
-<section class="hero is-light is-small">
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"> Method: ODIN</h2>
+        
+        <div class="col-md-8 col-md-offset-2">
+                <figure>
+                    <img src="./data/arch_v6-1.png" style="padding-bottom:10px;" class="img-responsive" alt="overview">
+                    <!-- <figcaption class="figure-caption text-center" style="font-size: 14px;">
+                        <b>Fig. 5.</b> The ReferIt3DNet neural listener.
+                    </figcaption> -->
+                </figure>
+        </div>
+        
+        <div class="content has-text-justified">
+          <p>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"> Quantitative Results </h2>
+        <div class="content has-text-justified">
+          <p>
+            ODIN achieves state-of-the-art performance on ScanNet200, Matterport3D and AI2THOR 3D instance segmentation benchmarks, and competitive performance on ScanNet, S3DIS and COCO.
+            When used as the 3D perception engine in an instructable embodied agent architecture, it sets a new state-of-the-art on the TEACh action-from-dialogue benchmark.
+          </p>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+            <figure>
+              <figcaption class="figure-caption text-center" style="font-size: 20px;">
+                ScanNet Semantic and Instance Segmentation Benchmarks.
+            </figcaption>
+              <img src="./data/scannet-qual.png" style="padding-bottom:10px" class="img-responsive" alt="overview">
+            </figure>
+            <figure>
+              <figcaption class="figure-caption text-center" style="font-size: 20px;">
+                ScanNet200 Semantic and Instance Segmentation Benchmarks.
+            </figcaption>
+              <img src="./data/scannet200-qual.png" style="padding-bottom:10px" class="img-responsive" alt="overview">
+            </figure>
+          </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+          <figure>
+            <figcaption class="figure-caption text-center" style="font-size: 20px;">
+              Matterport3D Semantic and Instance Segmentation Benchmarks.
+           </figcaption>
+            <img src="./data/matterport-qual.png" style="padding-bottom:10px" class="img-responsive" alt="overview">
+          </figure>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+          <figure>
+            <figcaption class="figure-caption text-center" style="font-size: 20px;">
+              S3DIS Semantic and Instance Segmentation Benchmarks.
+           </figcaption>
+            <img src="./data/s3dis-qual.png" style="padding-bottom:10px" class="img-responsive" alt="overview">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -248,70 +363,15 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          State-of-the-art models on contemporary 3D percep-
-          tion benchmarks like ScanNet consume and label dataset-
-          provided 3D point clouds, obtained through post process-
-          ing of sensed multiview RGB-D images. They are typi-
-          cally trained in-domain, forego large-scale 2D pre-training
-          and outperform alternatives that featurize the posed RGB-
-          D multiview images instead. The gap in performance be-
-          tween methods that consume posed images versus post-
-          processed 3D point clouds has fueled the belief that 2D
-          and 3D perception require distinct model architectures.
-          In this paper, we challenge this view and propose ODIN
-          (Omni-Dimensional INstance segmentation), a model that
-          can segment and label both 2D RGB images and 3D point
-          clouds, using a transformer architecture that alternates be-
-          tween 2D within-view and 3D cross-view information fu-
-          sion. Our model differentiates 2D and 3D feature oper-
-          ations through the positional encodings of the tokens in-
-          volved, which capture pixel coordinates for 2D patch tokens
-          and 3D coordinates for 3D feature tokens. ODIN achieves
-          state-of-the-art performance on ScanNet200, Matterport3D
-          and AI2THOR 3D instance segmentation benchmarks, and
-          competitive performance on ScanNet, S3DIS and COCO. It
-          outperforms all previous works by a wide margin when the
-          sensed 3D point cloud is used in place of the point cloud
-          sampled from 3D mesh. When used as the 3D perception en-
-          gine in an instructable embodied agent architecture, it sets
-          a new state-of-the-art on the TEACh action-from-dialogue
-          benchmark.
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
-
-
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
@@ -325,9 +385,7 @@
           </video>
         </div>
       </div>
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
       <div class="column">
         <h2 class="title is-3">Matting</h2>
         <div class="columns is-centered">
@@ -345,14 +403,11 @@
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
 
-    <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Animation</h2>
 
-        <!-- Interpolating. -->
         <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
@@ -384,9 +439,7 @@
           </div>
         </div>
         <br/>
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
         <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
           <p>
@@ -405,14 +458,11 @@
                     type="video/mp4">
           </video>
         </div>
-        <!--/ Re-rendering. -->
 
       </div>
     </div>
-    <!--/ Animation. -->
 
 
-    <!-- Concurrent Work. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
@@ -437,8 +487,70 @@
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
 
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"> Qualitative Results: 2D and 3D Segmentation </h2>
+        
+        <div class="col-md-8 col-md-offset-2">
+                <figure>
+                    <img src="./data/quant.png" style="padding-bottom:10px" class="img-responsive" alt="overview">
+                </figure>
+    </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./videos/6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
